@@ -1,0 +1,10 @@
+https://dzone.com/articles/java-security-tutorial-%E2%80%93-step 
+https://www.mulesoft.com/tcat/tomcat-ssl
+
+
+keytool -genkey -alias server_alias -keyalg RSA -keypass pass123 -storepass pass123 -keystore keystore.jks
+
+keytool -export -alias server_alias -storepass pass123 -file server.cer -keystore keystore.jks
+
+keytool -import -v -trustcacerts -alias server-alias -file server.cer -keystore cacerts.jks -keypass pass123 -storepass pass123
+
